@@ -60,7 +60,7 @@ class OrderShipment
 
         $data['positions'][] = array(
             'quantity'   => 1,
-            'price'      => $order->get_shipping_total() * 100,
+            'price'      => (float) $order->get_shipping_total() * 100, // This might not work for currencies such as JPY, HUF, TWD, BHD, KWD, OMR, etc.
             'assortment' => array(
                 'meta' => $meta,
             ),
